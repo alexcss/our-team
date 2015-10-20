@@ -19,7 +19,7 @@ input[type="submit"],
 input[type="button"],
 button {
   -webkit-transition: color 0.3s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in, opacity 0.3s ease-in;
-          transition: color 0.3s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in, opacity 0.3s ease-in;
+  transition: color 0.3s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in, opacity 0.3s ease-in;
 }
 input[type="submit"],
 input[type="button"],
@@ -35,13 +35,19 @@ input[type="tel"],
 textarea,
 select {
   -webkit-transition: color 0.3s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in, opacity 0.3s ease-in;
-          transition: color 0.3s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in, opacity 0.3s ease-in;
+  transition: color 0.3s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in, opacity 0.3s ease-in;
 }
 /* Layout */
 .ba-container {
   padding-left: 15px;
   padding-right: 15px;
   max-width: 1170px;
+}
+.ba-team-slider__slide{
+    display: none;
+}
+.ba-team-slider__slide:first-child{
+    display: block;
 }
 .slick-slide {
   outline: none;
@@ -56,7 +62,7 @@ select {
 .slick-next {
   position: absolute;
   display: block;
-  height: 20px;
+  height: 42px;
   width: 20px;
   line-height: 0px;
   font-size: 0px;
@@ -64,10 +70,11 @@ select {
   background: transparent;
   color: transparent;
   top: 50%;
-  margin-top: -10px;
+  margin-top: -21px;
   padding: 0;
   border: none;
   outline: none;
+  fill: #FC0;
 }
 .slick-prev:hover,
 .slick-next:hover,
@@ -97,13 +104,13 @@ select {
   -moz-osx-font-smoothing: grayscale;
 }
 .slick-prev {
-  left: -25px;
+  left: 0;
 }
 .slick-prev:before {
   content: "←";
 }
 .slick-next {
-  right: -25px;
+  right: 0;
 }
 .slick-next:before {
   content: "→";
@@ -115,11 +122,13 @@ select {
 .slick-dots {
   position: absolute;
   bottom: -45px;
+
   list-style: none;
   display: block;
   text-align: center;
   padding: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
 }
 .slick-dots li {
   position: relative;
@@ -134,41 +143,47 @@ select {
   border: 0;
   background: transparent;
   display: block;
-  height: 20px;
-  width: 20px;
   outline: none;
   line-height: 0px;
   font-size: 0px;
   color: transparent;
-  padding: 5px;
   cursor: pointer;
+width: 10px;
+height: 10px;
+background-color: #FC0;
+border: 1px solid #FC0;
 }
 .slick-dots li button:hover,
 .slick-dots li button:focus {
   outline: none;
 }
-.slick-dots li button:hover:before,
-.slick-dots li button:focus:before {
-  opacity: 1;
+.slick-dots li.slick-active button {
+    background-color: transparent;
 }
-.slick-dots li button:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "•";
-  width: 20px;
-  height: 20px;
-  font-size: 6px;
-  line-height: 20px;
+/* Socials */
+.ba-social__link{
+  display: inline-block;
   text-align: center;
-  color: #000000;
-  opacity: 0.25;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: 30px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #CCC;
+    margin: 0 1px;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
 }
-.slick-dots li.slick-active button:before {
-  color: #000000;
-  opacity: 0.75;
+.ba-social__icon{
+    fill: #ccc;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    transition: fill .2s ease-in;
+}
+.ba-social__link:hover{
+    border-color: #333;
+}
+.ba-social__link:hover .ba-social__icon{
+    fill:#333;
 }
 /* Team */
 .ba-team {
@@ -193,6 +208,39 @@ select {
 .ba-crewman__photo img {
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid #ffcc00;
+  position: relative;
+  z-index: 2;
+}
+.ba-crewman__photo{
+  border: 1px solid #ffcc00;
+    padding: 14px;
+    background: #FFF;
+    position: relative;
+    display: inline-block;
+}
+.ba-crewman__photo:after,
+.ba-crewman__photo:before{
+    content: "";
+    display: block;
+    background: #FFF;
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+}
+.ba-crewman__photo:before{
+    left: -4px;
+    right: -4px;
+    top: 0;
+    bottom: 0;
+    height: 50%;
+}
+.ba-crewman__photo:after{
+    left: 0;
+    right: 0;
+    top: -4px;
+    bottom: -4px;
+    width: 50%;
 }
 .ba-subtitle {
   color: #898F8F;
