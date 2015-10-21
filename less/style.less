@@ -1,0 +1,213 @@
+@prim:#FC0;
+
+@import (less) "../css/normalize.css";
+@import (less) "../css/layout.css";
+
+body{
+	font: 500 14px/1.7 'Raleway', Helvetica, Arial, sans-serif;
+	color: #333;
+}
+
+/* Typography */
+h1,h2,h3,h4,h5,h6{
+	color: #666;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-weight: 900;
+	line-height: 1.2;
+}
+a,
+input[type="submit"],
+input[type="button"],
+button{
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button{
+	display: inline-block;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover,
+.ba-button:hover{
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+
+}
+
+
+/* Layout */
+.ba-container{
+	max-width: 1170px;
+}
+.slick-slide{
+	outline:none;
+
+}
+/* Slider */
+@import (less) "../css/slick.css";
+@import "_slick-theme";
+.ba-team-slider{
+	// padding: 0 40px;
+
+	&__slide{
+		display: none;
+		padding: 0 40px;
+		&:first-child{
+			display: block;
+		}
+	}
+}
+
+
+/* Socials */
+.ba-social{
+	&__link{
+		display: inline-block;
+		text-align: center;
+		line-height: 31px;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #CCC;
+		margin: 0 1px;
+		padding: 6px;
+		-webkit-border-radius: 100%;
+		border-radius: 100%;
+
+		&:hover{
+			border-color: #333;
+		}
+	}
+	&__link:hover > &__icon{
+		fill:#333;
+	}
+	&__icon{
+		fill: #ccc;
+		display: block;
+		width: 14px;
+		height: 14px;
+		transition: fill .2s ease-in;
+	}
+
+}
+
+/* Team */
+.ba-team{
+	padding: 50px 0;
+	text-align: center;
+}
+.ba-crewman{
+	&__info{
+		padding: 40px 10px;
+		@media (min-width: 768px){
+			padding: 80px 40px 70px 80px;
+			border-left: 1px solid @prim;
+		}
+		@media (max-width: 767px){
+			margin-top: 40px;
+			border-top: 1px solid @prim;
+		}
+
+	}
+	&__name{
+		font-size: 36px;
+	}
+	&__position{
+		font-family: "Raleway", Arial, sans-serif;
+		font-size: 24px;
+		font-weight: 400;
+	}
+	&__photo{
+		border: 1px solid #ffcc00;
+		padding: 14px;
+		background: #FFF;
+		position: relative;
+		display: inline-block;
+		img{
+			margin-left: auto;
+			margin-right: auto;
+			border: 1px solid #ffcc00;
+			position: relative;
+			z-index: 2;
+		}
+		&:after,
+		&:before{
+			content: "";
+			display: block;
+			background: #FFF;
+			position: absolute;
+			z-index: 1;
+			margin: auto;
+		}
+		&:before{
+			left: -4px;
+			right: -4px;
+			top: 0;
+			bottom: 0;
+			height: 50%;
+		}
+		&:after{
+			left: 0;
+			right: 0;
+			top: -4px;
+			bottom: -4px;
+			width: 50%;
+		}
+	}
+}
+.ba-subtitle{
+	color: #898F8F;
+	font-family: "Raleway";
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0;
+}
+.ba-title{
+	color: @prim;
+	font-family: "Roboto";
+	font-size: 60px;
+	font-weight: 900;
+	margin: 0 0 50px;
+	text-transform: uppercase;
+	position: relative;
+	&:after{
+		display: block;
+		margin-top: 24px;
+		content: "";
+		max-width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+		height: 1px;
+		background: @prim;
+	}
+	&:before{
+		content: "";
+		width: 30px;
+		height: 20px;
+		background: #fff url(../img/icons/bonfire.svg) no-repeat 50%;
+
+		position: absolute;
+		bottom: -10px ;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+}
